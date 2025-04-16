@@ -9,28 +9,27 @@
 </head>
 
 <body>
-    <!-- The below tag is using Bulma CSS. Try replacing line 14 with line 13. -->
-    <!-- <div class="has-text-success-dark is-size-4  has-text-weight-medium"> -->
-    <div>
-        <a href="{{ url_for('home') }}">
-            Home
-        </a>
-        &nbsp;&nbsp;
-        <a href="{{ url_for('all_pages') }}">
-            Pages
-        </a>
-        &nbsp;&nbsp;
-        <a href="{{ url_for('about') }}">
-            About
-        </a>
-    </div>
-
-    <!-- The below tag is using Bulma CSS. Try replacing line 30 with line 29. -->
-    <!-- <div class="content"> -->
-    <div>
-        {% block content %}{{ page_content }}{% endblock %}
-    </div>
-
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <strong>My Company</strong>
+          </a>
+        </div>
+      
+        <div class="navbar-menu is-active">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">Home</a>
+            <a class="navbar-item" href="/about">About</a>
+            <a class="navbar-item" href="/contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+  
+    <section class="section">
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+    </section>
 </body>
 
 </html>
